@@ -1,4 +1,8 @@
 @extends('layout.base')
+
+@section('title')
+    {{ 'Profile' }}
+@endsection
 @section('content')
     <div class="flex justify-end">
         {{-- hamburger menu --}}
@@ -16,14 +20,14 @@
         </div>
     @endif
 
-    <div class="mt-3 bg-white p-2 h-[60vh] rounded shadow-sm">
+    <div class="mt-3 bg-white p-2 min-h-[60vh] rounded shadow-sm">
         <h1 class="text-3xl font-bold">Personal Information</h1>
         {{-- update profile --}}
         <form action="/profile" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="flex gap-24 p-2 h-[50vh] ml-10">
+            <div class="md:flex gap-24 p-2 min-h-[50vh] ml-10">
                 <div class="flex flex-col">
-                    <div class="flex-1 mt-10">
+                    <div class="flex-1 mt-10 text-center">
                         <input type="file" name="image" id="imageInput" class="hidden" accept="image/*">
                         <label for="imageInput" class="cursor-pointer">
                             <div
@@ -53,29 +57,29 @@
                             </div>
                         @enderror
                     </div>
-                    <textarea name="address" id="address" rows="2" class="border border-slate-200 p-2 mt-4">{{ $user->address }}</textarea>
+                    <textarea name="address" id="address" rows="2" class="border border-slate-200 p-2 mt-4 mb-4 md:mb-0">{{ $user->address }}</textarea>
                 </div>
 
-                <div class="w-[25%]">
+                <div class="min-w-[30%]">
                     <div class="mb-4 flex items-center">
-                        <label for="role" class="font-bold w-full">Role</label>
+                        <label for="role" class="font-bold w-[25%]">Role</label>
                         @foreach ($user->roles as $role)
                             <input type="text" name="role" class="border border-slate-200 p-2 rounded w-full"
                                 value="{{ $role->name }}" disabled>
                         @endforeach
                     </div>
                     <div class="mb-4 flex items-center">
-                        <label for="name" class="font-bold w-full">Name</label>
+                        <label for="name" class="font-bold  w-[25%]">Name</label>
                         <input type="text" name="name" class="border border-slate-200 p-2 rounded w-full"
                             value="{{ $user->name }}">
                     </div>
                     <div class="mb-4 flex items-center">
-                        <label for="email" class="font-bold w-full">Email</label>
+                        <label for="email" class="font-bold  w-[25%]">Email</label>
                         <input type="text" name="email" class="border border-slate-200 p-2 rounded w-full"
                             value="{{ $user->email }}">
                     </div>
                     <div class="mb-4 flex items-center">
-                        <label for="contact" class="font-bold w-full">Contact</label>
+                        <label for="contact" class="font-bold  w-[25%]">Contact</label>
                         <input type="text" name="contact" class="border border-slate-200 p-2 rounded w-full"
                             value="{{ $user->contact }}">
                     </div>
