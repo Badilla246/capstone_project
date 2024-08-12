@@ -12,7 +12,7 @@
 <body>
     <div class="w-full relative h-screen bg-gradient-to-t from-green-100 to-green-400">
         <div
-            class="absolute lg:left-[20rem] left-[10rem] md:left-[15rem] rounded top-[5rem] h-[70vh] shadow-lg overflow-hidden w-[60%]">
+            class="absolute lg:left-[18rem] xl:left-[19rem] sm:left-[7rem] left-[5rem] md:left-[10rem] rounded top-[5rem] h-[70vh] shadow-lg overflow-hidden lg:w-[60%] md:w-[70%] w-[70%]">
 
             <div class="md:flex h-full">
 
